@@ -31,11 +31,10 @@ pipeline {
         }
 
         stage('Load Images into Minikube') {
-            steps {
-                sh 'minikube image load pulsecheck-backend:latest'
-                sh 'minikube image load pulsecheck-frontend:latest'
-            }
-        }
+    steps {
+        echo 'Skipping image load'
+    }
+}
 
         stage('Deploy Kubernetes') {
             steps {
